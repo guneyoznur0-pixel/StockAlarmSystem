@@ -1,0 +1,87 @@
+﻿@model List<StockAlarmSystem.Models.Product>//controllerden product listesi gönder
+
+<h2>Ürün Listesi</h2> @*tablo başlangıcı*@
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Ürün Adı</th>
+        <th>Stok</th>
+        <th>Minimum Stok</th>
+        <th>Fiyat</th>
+        <th>Alarm</th>
+        <th>İşlem</th>
+    </tr>
+
+    @foreach (var item in Model)@*tek tek grupları yazmak için kullanırız*@
+    {
+        if (item.IsCritical)@*ürün stok miktarı tehlikde oldugu için*@
+        {
+            <tr style="background-color:#ffcccc">
+
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Stock</td>
+                <td>@item.MinStock</td>
+                <td>@item.Price ₺</td>
+
+                <td>Kritik Stok</td> @*sıkıntı olsn her yerde bu yazar *@
+
+                <td>
+                    <a href="/Product/DeleteProduct/@item.ProductId"
+                       class="btn btn-danger">
+                        Sil
+                    </a>
+                </td>
+
+            </tr>
+        }
+        else
+        {
+            <tr>
+
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Stock</td>
+                <td>@item.MinStock</td>
+                <td>@item.Price ₺</td>
+
+                <td>Normal</td>
+
+                <td>
+                    <a href="/Product/DeleteProduct/@item.ProductId"
+                       class="btn btn-danger">
+                        Sil<a href="/Product/UpdateProduct/@item.ProductId"
+                              class="btn btn-warning">
+                            Güncelle
+                        </a>
+                    </a>
+                </td>
+
+            </tr>
+        }
+    }
+    <form method="get" action="/Product/Search">@*web sayfasında arama yapmak için*@
+
+        <div class="row mb-3">
+
+            <div class="col-md-4">
+                <input type="text"
+                       name="searchText"
+                       class="form-control"
+                       placeholder="Ürün Ara" />
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit"
+                        class="btn btn-primary">
+                    Ara
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+
+</table>

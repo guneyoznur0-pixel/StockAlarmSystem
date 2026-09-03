@@ -1,0 +1,41 @@
+﻿@model StockAlarmSystem.Models.Product//ürün güncelleme formu 
+
+<h2>Ürün Güncelle</h2>
+
+<form method="post">
+
+    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+
+    <div class="mb-3">@*bilgilerin kutulara doldurulması *@
+        <label>Ürün Adı</label>
+        <input type="text" name="ProductName"
+               value="@Model.ProductName"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Stok</label>
+        <input type="number" name="Stock"
+               value="@Model.Stock"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Minimum Stok</label>
+        <input type="number" name="MinStock"
+               value="@Model.MinStock"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Fiyat</label>
+        <input type="number" name="Price"
+               value="@Model.Price"
+               class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-warning">
+        Güncelle
+    </button>
+
+</form>

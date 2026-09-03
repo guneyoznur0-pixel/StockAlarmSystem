@@ -1,0 +1,38 @@
+﻿<h2>Dashboard</h2>@*yönetim paneli*@
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card bg-primary text-white p-3">
+            <h3>Toplam Ürün</h3>
+            <h1>@ViewBag.TotalProducts</h1>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-danger text-white p-3">
+            <h3>Kritik Stok</h3>
+            <h1>@ViewBag.CriticalStock</h1>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-success text-white p-3">
+            <h3>Toplam Satış</h3>
+            <h1>@ViewBag.TotalSales</h1>
+        </div>
+    </div><div class="col-md-4">
+        <div class="card bg-warning text-dark p-3">
+            <h3>Tedarikçiler</h3>
+            <h1>@ViewBag.TotalSuppliers</h1>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-info text-white p-3">
+            <h3>Müşteriler</h3>
+            <h1>@ViewBag.TotalCustomers</h1>
+        </div>
+    </div>
+
+</div>

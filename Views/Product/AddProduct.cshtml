@@ -1,0 +1,31 @@
+﻿@model StockAlarmSystem.Models.Product
+
+<h2>Ürün Ekle</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label>Ürün Adı</label>
+        <input type="text" name="ProductName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Stok</label>
+        <input type="number" name="Stock" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Minimum Stok</label>
+        <input type="number" name="MinStock" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Fiyat</label>
+        <input type="number" name="Price" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Ürün Ekle
+    </button>
+
+</form>
